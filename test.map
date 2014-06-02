@@ -68,13 +68,13 @@ MAP
       EXPRESSION "Electric"
       STYLE
         COLOR 4 202 27
-        OUTLINECOLOR 255 255 255
+        OUTLINECOLOR 0 0 0
         OPACITY 50
         ANTIALIAS true
       END
       LABEL
-        MINFEATURESIZE 50
-        MINDISTANCE 150
+        #MINFEATURESIZE 50
+        #MINDISTANCE 150
         POSITION CC
         SIZE TINY
 	ANTIALIAS true
@@ -86,13 +86,13 @@ MAP
       EXPRESSION "Gas"
       STYLE
         COLOR 0 230 233
-        OUTLINECOLOR 255 255 255
+        OUTLINECOLOR 0 0 0
         OPACITY 50
         ANTIALIAS true
       END
       LABEL
-        MINFEATURESIZE 50
-        MINDISTANCE 150
+        #MINFEATURESIZE 50
+        #MINDISTANCE 150
         POSITION CC
         SIZE TINY
 	ANTIALIAS true
@@ -104,13 +104,13 @@ MAP
       EXPRESSION "Water"
       STYLE
         COLOR 0 21 219
-        OUTLINECOLOR 255 255 255
+        OUTLINECOLOR 0 0 0
         OPACITY 50
         ANTIALIAS true
       END
       LABEL
-        MINFEATURESIZE 50
-        MINDISTANCE 150
+        #MINFEATURESIZE 50
+        #MINDISTANCE 150
         POSITION CC
         SIZE TINY
 	ANTIALIAS true
