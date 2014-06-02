@@ -3,7 +3,8 @@ MAP
   NAME fktemp
   STATUS ON
   IMAGETYPE PNG
-  EXTENT -16000000.00 -12000000.00 21000000.00 15000000.00
+  #EXTENT -16000000.00 -12000000.00 21000000.00 15000000.00
+  EXTENT -500000.00 6000000.00 100000.00 8000000.00
   SHAPEPATH "data"
   SIZE           800 700
   IMAGECOLOR 255 255 255
@@ -60,32 +61,60 @@ MAP
     CONNECTIONTYPE postgis
     CONNECTION "host=127.0.0.1 port=5432 dbname=s7customers user=postgres password=postgres"
     DATA "area from s7customers USING unique id"
+    LABELITEM "name"    
     CLASSITEM marketsector
     CLASS
       NAME "Electric"
       EXPRESSION "Electric"
       STYLE
-        COLOR 0 255 0
-        OUTLINECOLOR 32 32 32
+        COLOR 4 202 27
+        OUTLINECOLOR 255 255 255
+        OPACITY 50
         ANTIALIAS true
+      END
+      LABEL
+        MINFEATURESIZE 50
+        MINDISTANCE 150
+        POSITION CC
+        SIZE TINY
+	ANTIALIAS true
+        COLOR 0 0 0
       END
     END
     CLASS
       NAME "Gas"
       EXPRESSION "Gas"
       STYLE
-        COLOR 0 150 0
-        OUTLINECOLOR 32 32 32
+        COLOR 0 230 233
+        OUTLINECOLOR 255 255 255
+        OPACITY 50
         ANTIALIAS true
+      END
+      LABEL
+        MINFEATURESIZE 50
+        MINDISTANCE 150
+        POSITION CC
+        SIZE TINY
+	ANTIALIAS true
+        COLOR 0 0 0
       END
     END
     CLASS
       NAME "Water"
       EXPRESSION "Water"
       STYLE
-        COLOR 0 0 255
-        OUTLINECOLOR 32 32 32
+        COLOR 0 21 219
+        OUTLINECOLOR 255 255 255
+        OPACITY 50
         ANTIALIAS true
+      END
+      LABEL
+        MINFEATURESIZE 50
+        MINDISTANCE 150
+        POSITION CC
+        SIZE TINY
+	ANTIALIAS true
+        COLOR 0 0 0
       END
     END
   END
