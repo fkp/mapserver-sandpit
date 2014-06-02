@@ -1,0 +1,94 @@
+MAP
+# Start of symbol definition
+  NAME fktemp
+  STATUS ON
+  IMAGETYPE PNG
+  EXTENT -16000000.00 -12000000.00 21000000.00 15000000.00
+  SHAPEPATH "data"
+  SIZE           800 700
+  IMAGECOLOR 255 255 255
+
+  #
+  # Start of symbol definitions (we're only using a few)
+  #
+  SYMBOL
+    NAME 'circle'
+    TYPE ELLIPSE
+    POINTS 1 1 END
+    FILLED TRUE
+  END
+
+  SYMBOL
+    NAME 'north'
+    TYPE PIXMAP
+    IMAGE "north.gif"
+  END # SYMBOL
+
+#  LAYER
+#    NAME testlayer
+#    TYPE POINT
+#    DATA testpoint
+#    STATUS ON
+#    CLASS
+#      NAME 'testpoint'
+#      STYLE
+#        COLOR 254 161 0
+#        SYMBOL 'circle'
+#        SIZE 7
+#      END
+#    END # STYLE
+#  END
+
+#  LAYER
+#    NAME customers
+#    TYPE POLYGON
+#    DATA s7customers.shp
+#    STATUS ON
+#    CLASS
+#      NAME "FKTEMP"
+#      STYLE
+#        COLOR 128 128 128
+#        OUTLINECOLOR 32 32 32
+#      END
+#    END
+#  END
+
+  LAYER
+    NAME customers
+    TYPE POLYGON
+    STATUS ON
+    CONNECTIONTYPE postgis
+    CONNECTION "host=127.0.0.1 port=5432 dbname=s7customers user=postgres password=postgres"
+    DATA "area from s7customers USING unique id"
+    CLASSITEM marketsector
+    CLASS
+      NAME "Electric"
+      EXPRESSION "Electric"
+      STYLE
+        COLOR 0 255 0
+        OUTLINECOLOR 32 32 32
+        ANTIALIAS true
+      END
+    END
+    CLASS
+      NAME "Gas"
+      EXPRESSION "Gas"
+      STYLE
+        COLOR 0 150 0
+        OUTLINECOLOR 32 32 32
+        ANTIALIAS true
+      END
+    END
+    CLASS
+      NAME "Water"
+      EXPRESSION "Water"
+      STYLE
+        COLOR 0 0 255
+        OUTLINECOLOR 32 32 32
+        ANTIALIAS true
+      END
+    END
+  END
+
+END
+
