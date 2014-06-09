@@ -13,18 +13,18 @@
     <script>
       function init() {
 
-var bounds = new OpenLayers.Bounds(
+/*var bounds = new OpenLayers.Bounds(
                     -636343.391869904, 6438558.00834335,
                     76000, 7649248.46597106
-                );
+                );*/
 
-var options = {
+/*var options = {
                     controls: [],
                     maxExtent: bounds,
                     maxResolution: 4729.259600108242,
                     projection: "EPSG:900913",
                     units: 'm'
-                };
+                };*/
 
         map = new OpenLayers.Map("basicMap");
         var mapnik         = new OpenLayers.Layer.OSM();
@@ -33,10 +33,22 @@ var options = {
         var position       = new OpenLayers.LonLat(-13.41,22.52).transform( fromProjection, toProjection);
         var zoom           = 2; 
 
-        s7customerlayer = new OpenLayers.Layer.MapServer( "s7customers", "/cgi-bin/mapserv", {map: 'test.map'} );
+        customerlayer = new OpenLayers.Layer.MapServer( "customers", "/cgi-bin/mapserv",
+		{
+			map: "/var/www/customers.map",
+			layer: "customers",
+			version: "1.1.1",
+			transparent: "true"
+		},
+		{
+			isBaseLayer: false,
+			visibility: true
+		}
+		);
  
         map.addLayer(mapnik);
-        map.addLayer(s7customerlayer);
+        map.addLayer(customerlayer);
+//	map.zoomToMaxExtent();
         map.setCenter(position, zoom );
       }
     </script>

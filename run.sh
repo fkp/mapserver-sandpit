@@ -1,1 +1,1 @@
-shp2img -m test.map -o test.png -all_debug 1
+shp2img -m customers.map -o customers.png -all_debug 1
