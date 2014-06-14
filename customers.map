@@ -1,63 +1,14 @@
 MAP
-# Start of symbol definition
-  NAME customers
+  NAME customersMap
   STATUS ON
   IMAGETYPE PNG
-  #EXTENT -16000000.00 -12000000.00 21000000.00 15000000.00
-  #EXTENT -500000.00 6000000.00 100000.00 8000000.00
   EXTENT -20037508.34 -20037508.34 20037508.34 20037508.34
-  SHAPEPATH "data"
   SIZE           800 700
   IMAGECOLOR 255 255 255
   TRANSPARENT ON
 
-  #
-  # Start of symbol definitions (we're only using a few)
-  #
-  SYMBOL
-    NAME 'circle'
-    TYPE ELLIPSE
-    POINTS 1 1 END
-    FILLED TRUE
-  END
-
-  SYMBOL
-    NAME 'north'
-    TYPE PIXMAP
-    IMAGE "north.gif"
-  END # SYMBOL
-
-#  LAYER
-#    NAME testlayer
-#    TYPE POINT
-#    DATA testpoint
-#    STATUS ON
-#    CLASS
-#      NAME 'testpoint'
-#      STYLE
-#        COLOR 254 161 0
-#        SYMBOL 'circle'
-#        SIZE 7
-#      END
-#    END # STYLE
-#  END
-
-#  LAYER
-#    NAME customers
-#    TYPE POLYGON
-#    DATA s7customers.shp
-#    STATUS ON
-#    CLASS
-#      NAME "FKTEMP"
-#      STYLE
-#        COLOR 128 128 128
-#        OUTLINECOLOR 32 32 32
-#      END
-#    END
-#  END
-
   LAYER
-    NAME customers
+    NAME customersLayer
     TYPE POLYGON
     STATUS ON
     CONNECTIONTYPE postgis
@@ -73,6 +24,7 @@ MAP
         OUTLINECOLOR 0 0 0
         OPACITY 50
         ANTIALIAS true
+	WIDTH 1
       END
       LABEL
         #MINFEATURESIZE 50
@@ -91,6 +43,7 @@ MAP
         OUTLINECOLOR 0 0 0
         OPACITY 50
         ANTIALIAS true
+	WIDTH 1
       END
       LABEL
         #MINFEATURESIZE 50
@@ -109,6 +62,7 @@ MAP
         OUTLINECOLOR 0 0 0
         OPACITY 50
         ANTIALIAS true
+	WIDTH 1
       END
       LABEL
         #MINFEATURESIZE 50
